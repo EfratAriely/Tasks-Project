@@ -1,0 +1,21 @@
+
+.container {
+  width: 300px;
+  margin: auto;
+  font-family: Arial;
+}
+
+input {
+  padding: 5px;
+  margin: 5px;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.empty {
+  color: gray;
+  font-style: italic;
+}

@@ -1,0 +1,26 @@
+<form [formGroup]="form" (ngSubmit)="addTask()">
+  <input formControlName="title" placeholder="New task" />
+  <button type="submit">Add</button>
+</form>
+ 
+<hr />
+<div *ngIf="loading">Loading...</div>
+
+<div *ngIf="!loading && errorMessage" class="error">
+  {{ errorMessage }}
+</div>
+
+<div *ngIf="!loading && !errorMessage && tasks.length === 0" class="empty">
+  No tasks yet, add your first task!
+</div>
+
+<div *ngFor="let task of tasks">
+  <input type="checkbox"
+       [checked]="task.isCompleted"
+       (change)="toggle(task)" />
+
+  <span [style.textDecoration]="task.isCompleted ? 'line-through' : 'none'">
+    {{ task.title }}
+  </span>
+</div> 
+
