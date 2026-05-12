@@ -1,21 +1,81 @@
-
 .container {
-  width: 300px;
-  margin: auto;
-  font-family: Arial;
+  width: 360px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-input {
-  padding: 5px;
-  margin: 5px;
+form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input[formControlName="title"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.2s;
+}
+
+input[formControlName="title"]:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.15);
 }
 
 button {
-  padding: 5px 10px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background: #4a90e2;
+  color: white;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #357bd8;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  background: #f7f9fc;
+  transition: 0.2s;
+}
+
+.task-item:hover {
+  background: #eef3fb;
+}
+
+.task-text {
+  flex: 1;
+  font-size: 14px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #999;
 }
 
 .empty {
-  color: gray;
+  text-align: center;
+  color: #888;
   font-style: italic;
+  margin-top: 20px;
+}
+
+.error {
+  color: #d9534f;
+  text-align: center;
+  margin-top: 10px;
 }

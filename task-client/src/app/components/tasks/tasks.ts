@@ -1,4 +1,4 @@
-import { Component, OnInit,ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { TasksService, Task } from '../../services/tasks';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,10 +12,10 @@ import { CommonModule } from '@angular/common';
   styleUrl: './tasks.css',
 })
 export class Tasks implements OnInit {
- 
+
   form!: FormGroup;
-   tasks: Task[] = [];
-  loading = false; 
+  tasks: Task[] = [];
+  loading = false;
   errorMessage = '';
 
   constructor(
@@ -36,9 +36,9 @@ export class Tasks implements OnInit {
 
     this.tasksService.getTasks().subscribe({
       next: res => {
-      this.tasks = [...res];
-      this.loading = false;
-       this.cdr.detectChanges();
+        this.tasks = [...res];
+        this.loading = false;
+        this.cdr.detectChanges();
       },
       error: err => {
         this.errorMessage = 'Failed to load tasks';
